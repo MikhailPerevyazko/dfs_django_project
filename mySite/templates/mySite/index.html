@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ДФС "Университетский" - Запись на занятие</title>
+        <link rel="stylesheet" href="{% static 'mySite/styles.css' %}"></head>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Записаться на пробное занятие</h1>
+            <p class="intro-text">Заполните анкету и мы свяжемся с вами для подтверждения записи</p>
+            
+            <!-- Сообщения об успехе/ошибке -->
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-{% if message.tags == 'error' %}error{% else %}success{% endif %}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+            
+            <form method="POST">
+                {% csrf_token %}
+                
+                <div class="form-group">
+                    <label>Введите имя ребенка:</label>
+                    <input type="text" name="child_name" placeholder="Например, Иванов Иван Иванович" required>
+                </div>
+    
+                <div class="form-group">
+                    <label>Дата рождения:</label>
+                    <input type="date" name="birth_date" required>
+                </div>
+    
+                <div class="form-group">
+                    <label>Номер телефона:</label>
+                    <input type="tel" name="phone_number" placeholder="+7 (999) 123-45-67" required>
+                </div>
+    
+                <div class="form-group">
+                    <label>Когда планируете подойти?</label>
+                    <input type="datetime-local" name="planned_date" required>
+                </div>
+    
+                <div class="checkbox-group" style="display: flex; align-items: center; gap: 10px; margin-bottom: 50px;">
+                    <input type="checkbox" name="agreement" id="agreement" required style="width: 20px;">
+                    <label for="agreement" style="margin: 0;">Я даю согласие на обработку персональных данных</label>
+                </div>
+    
+                <button type="submit" class="btn">Отправить заявку</button>
+            </form>
+        </div>
+    </body>
+</html>
