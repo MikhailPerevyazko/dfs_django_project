@@ -2,7 +2,6 @@ from django.contrib import admin
 from .models import TrainingRegistration
 
 # Register your models here.
-
 @admin.register(TrainingRegistration)
 class TrainingRegistrationAdmin(admin.ModelAdmin):
     list_display = ['child_name', 'phone_number', 'planned_date', 'created_at']

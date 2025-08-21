@@ -4,7 +4,7 @@ from .models import TrainingRegistration
 
 # Create your views here.
 
-# Функция отвечает за рендер главной страницы
+# Функция отвечает за рендер главной страницы (Запись на занятие)
 def registration(request):
     if request.method == 'POST':
         # Получаем данные из формы
@@ -17,19 +17,22 @@ def registration(request):
         # Сохраняем в базу
         try:
             registration = TrainingRegistration(
-                child_name=child_name,
-                birth_date=birth_date,
-                phone_number=phone_number,
-                planned_date=planned_date,
-                agreement=agreement
+                child_name = child_name,
+                birth_date = birth_date,
+                phone_number = phone_number,
+                planned_date = planned_date,
+                agreement = agreement
             )
             registration.save()
             
             messages.success(request, 'Заявка успешно отправлена! Мы свяжемся с вами в ближайшее время.')
-            return redirect('index')
+            return redirect('registration')
             
         except Exception as e:
             messages.error(request, f'Произошла ошибка: {str(e)}')
     
     return render(request, 'mySite/index.html')
     
+
+def about(request):
+    return render(request, 'mySite/about.html')
