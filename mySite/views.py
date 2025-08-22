@@ -3,7 +3,6 @@ from django.contrib import messages
 from .models import TrainingRegistration
 
 # Create your views here.
-
 # Функция отвечает за рендер главной страницы (Запись на занятие)
 def registration(request):
     if request.method == 'POST':
