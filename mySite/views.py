@@ -3,7 +3,7 @@ from django.contrib import messages
 from .models import TrainingRegistration
 
 # Create your views here.
-# Функция отвечает за рендер главной страницы (Запись на занятие)
+# Функция отвечает за рендер главной страницы (Запись на занятие) и отправку формы в базу данных
 def registration(request):
     if request.method == 'POST':
         # Получаем данные из формы
@@ -11,7 +11,7 @@ def registration(request):
         birth_date = request.POST.get('birth_date')
         phone_number = request.POST.get('phone_number')
         planned_date = request.POST.get('planned_date')
-        agreement = request.POST.get('agreement') == 'on'  # Чекбокс возвращает 'on' если отмечен
+        agreement = request.POST.get('agreement') == 'on'  # checkbox возвращает 'on' если отмечен
         
         # Сохраняем в базу
         try:
@@ -35,3 +35,6 @@ def registration(request):
 
 def about(request):
     return render(request, 'mySite/about.html')
+
+def help(requset):
+    return render(requset, 'mySite/help.html')

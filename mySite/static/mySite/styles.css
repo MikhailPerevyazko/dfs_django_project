@@ -111,6 +111,31 @@ input:hover {
     content: '';
 }
 
+.navigation {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+    justify-content: center;
+}
+
+.nav-btn {
+    padding: 12px 25px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.nav-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+}
+
 @media (max-width: 600px) {
     .container {
         padding: 30px 20px;
@@ -119,5 +144,112 @@ input:hover {
     
     h1 {
         font-size: 1.8em;
+    }
+}
+
+
+.about-us {
+    padding: 4rem 0;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+.about-us .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.about-us h1 {
+    text-align: center;
+    color: #1a5276; /* Темно-синий цвет */
+    margin-bottom: 1.5rem;
+}
+
+.about-us h2 {
+    color: #2874a6; /* Синий цвет */
+    border-bottom: 2px solid #f1c40f; /* Желтая полоса под заголовком */
+    padding-bottom: 0.5rem;
+    margin-top: 2.5rem;
+}
+
+.about-us h3 {
+    color: #2c3e50; /* Темно-серый/синий */
+}
+
+.about-us .intro {
+    font-size: 1.1rem;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.principles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.principle {
+    background: #f8f9fa; /* Светло-серый фон для карточек */
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid #f1c40f; /* Акцентная желтая полоса */
+}
+
+.offers ul {
+    columns: 2; /* Разбиваем список на две колонки */
+    gap: 2rem;
+    padding-left: 1.5rem;
+}
+
+.offers li {
+    margin-bottom: 0.75rem;
+}
+
+.goal {
+    background: #eaf2f8; /* Светло-голубой фон */
+    padding: 2rem;
+    border-radius: 8px;
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.cta {
+    text-align: center;
+    margin-top: 3rem;
+    padding: 2rem;
+    background: #fcf3cf; /* Светло-желтый фон для призыва к действию */
+    border-radius: 8px;
+}
+
+.cta p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.button {
+    display: inline-block;
+    background-color: #e74c3c; /* Красный цвет для кнопки */
+    color: white;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #c0392b; /* Темнее при наведении */
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    .offers ul {
+        columns: 1; /* На мобильных одна колонка */
+    }
+    .principles {
+        grid-template-columns: 1fr;
     }
 }
