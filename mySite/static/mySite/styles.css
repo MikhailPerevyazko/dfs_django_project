@@ -230,6 +230,7 @@ input:hover {
 }
 
 .button {
+    margin-top: 20px;
     display: inline-block;
     background-color: #e74c3c; /* Красный цвет для кнопки */
     color: white;
@@ -252,4 +253,29 @@ input:hover {
     .principles {
         grid-template-columns: 1fr;
     }
+}
+
+.btn-back-to-home {
+    margin-top: 10px;
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(135deg, #e63d05, #e48613);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-back-to-home:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+}
+
+.btn-back-to-home:active {
+    transform: translateY(-1px);
 }

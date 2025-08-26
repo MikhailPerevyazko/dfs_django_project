@@ -3,6 +3,12 @@ from django.contrib import messages
 from .models import TrainingRegistration
 
 # Create your views here.
+def index(request):
+    return render(request, 'mySite/home.html')
+
+def home(request):
+    return render(request, 'mySite/home.html')
+
 # Функция отвечает за рендер главной страницы (Запись на занятие) и отправку формы в базу данных
 def registration(request):
     if request.method == 'POST':
@@ -30,11 +36,11 @@ def registration(request):
         except Exception as e:
             messages.error(request, f'Произошла ошибка: {str(e)}')
     
-    return render(request, 'mySite/index.html')
+    return render(request, 'mySite/registration.html')
     
 
 def about(request):
     return render(request, 'mySite/about.html')
 
-def help(requset):
-    return render(requset, 'mySite/help.html')
+def help_page(request):
+    return render(request, 'mySite/help.html')
