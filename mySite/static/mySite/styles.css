@@ -279,3 +279,28 @@ input:hover {
 .btn-back-to-home:active {
     transform: translateY(-1px);
 }
+
+.vk-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.vk-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #4a76a8;
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.vk-btn:hover {
+    background-color: #3d638f;
+    transform: translateY(-2px);
+}
